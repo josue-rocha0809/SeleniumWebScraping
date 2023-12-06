@@ -239,6 +239,42 @@ dataKeys = [
         'clickThree': "//div[@id='wb-auto-6']//select[3]",
         'finalClick': 'btn btn-primary mrgn-bttm-md'
     },
+    {
+        'responseSize': '2',
+        'parts': 2,
+        'menuone': 'Temporary residence (visiting, studying, working)',
+        'clickOne': "//div[@id='wb-auto-6']//select[1]",
+        'menuTwo': 'Visitor visa (from inside Canada)',
+        'clickTwo': "//div[@id='wb-auto-6']//select[2]",
+        'finalClick': 'btn btn-primary mrgn-bttm-md'
+    },
+    {
+        'responseSize': '2',
+        'parts': 2,
+        'menuone': 'Temporary residence (visiting, studying, working)',
+        'clickOne': "//div[@id='wb-auto-6']//select[1]",
+        'menuTwo': 'Study permit extension',
+        'clickTwo': "//div[@id='wb-auto-6']//select[2]",
+        'finalClick': 'btn btn-primary mrgn-bttm-md'
+    },
+    {
+        'responseSize': '2',
+        'parts': 2,
+        'menuone': 'Citizenship',
+        'clickOne': "//div[@id='wb-auto-6']//select[1]",
+        'menuTwo': 'Adoption',
+        'clickTwo': "//div[@id='wb-auto-6']//select[2]",
+        'finalClick': 'btn btn-primary mrgn-bttm-md'
+    },
+    {
+        'responseSize': '2',
+        'parts': 2,
+        'menuone': 'Temporary residence (visiting, studying, working)',
+        'clickOne': "//div[@id='wb-auto-6']//select[1]",
+        'menuTwo': 'Work permit from inside Canada (initial and extension)',
+        'clickTwo': "//div[@id='wb-auto-6']//select[2]",
+        'finalClick': 'btn btn-primary mrgn-bttm-md'
+    },
 ]
 
 
@@ -265,6 +301,7 @@ def scrapping(dataKeys, arr):
 
         for item in dataKeys:
             completed = False
+            print("item['menuTwo']",item['menuTwo'])
             select_element = WebDriverWait(driver, 5).until(
                 EC.presence_of_element_located((By.XPATH, item['clickOne']))
             )
@@ -284,19 +321,47 @@ def scrapping(dataKeys, arr):
                                                        'btn btn-primary mrgn-bttm-md'.replace(
                                                            ' ', '.')))) \
                     .click()
-                time.sleep(8)
+                time.sleep(2)
                 if item['menuTwo'] == 'Citizenship certificate (proof of citizenship)':
                     processing_time_element = WebDriverWait(driver, 2).until(
                         EC.visibility_of_element_located(
                             (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/p[3]/strong/span"))
                     )
                 else:
-                    processing_time_element = WebDriverWait(driver, 2).until(
-                        EC.visibility_of_element_located(
-                            (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span[2]"))
-                    )
-                obj = {item['menuTwo']: item['menuTwo'], 'result': processing_time_element.text}
-                arr.append(obj)
+                    if item['responseSize'] == '1':
+                        processing_time_element = WebDriverWait(driver, 2).until(
+                            EC.visibility_of_element_located(
+                                (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span[2]"))
+                        )
+                        obj = {item['menuTwo']: item['menuTwo'], 'result': processing_time_element.text}
+                        arr.append(obj)
+                    else:
+                        if item['menuTwo'] == 'Adoption':
+                            processing_time_element_part_one = WebDriverWait(driver, 2).until(
+                                EC.visibility_of_element_located(
+                                    (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span[2]"))
+                            )
+                            processing_time_element_part_two = WebDriverWait(driver, 2).until(
+                                EC.visibility_of_element_located(
+                                    (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[4]/p/span[2]"))
+                            )
+                            obj = {item['menuTwo']: item['menuTwo'],
+                                   'result_partone': processing_time_element_part_one.text,
+                                   'result_parttwo': processing_time_element_part_two.text}
+                            arr.append(obj)
+                        else:
+                            processing_time_element_online = WebDriverWait(driver, 2).until(
+                                EC.visibility_of_element_located(
+                                    (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/div[1]/p[2]/span[2]"))
+                            )
+                            processing_time_element_paper = WebDriverWait(driver, 2).until(
+                                EC.visibility_of_element_located(
+                                    (By.XPATH, "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/div[2]/p[2]/span[2]"))
+                            )
+                            obj = {item['menuTwo']: item['menuTwo'],
+                                   'result_online': processing_time_element_online.text,
+                                   'result_paper': processing_time_element_paper.text}
+                            arr.append(obj)
             elif item['parts'] == 3:
                 select_element3 = WebDriverWait(driver, 300).until(
                     EC.element_to_be_clickable((By.XPATH, "//div[@id='wb-auto-6']//select[3]"))
