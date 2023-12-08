@@ -7,7 +7,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 import time
-import sys
 
 dataKeys = [
     {
@@ -280,7 +279,6 @@ dataKeys = [
 
 
 def scrapping(dataKeys, arr):
-    print("aqui enbtro")
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -288,25 +286,24 @@ def scrapping(dataKeys, arr):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     options.binary_location = "/usr/bin/google-chrome"
-    driver = webdriver.Chrome(options=options)
 
-    # driver_path = "C:/Users/josue/Projects/python/chrome/chromedriver.exe"
-    # driver: WebDriver = webdriver.Chrome(driver_path, chrome_options=options)
+    # driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
+    driver = webdriver.Chrome(options=options)
 
     driver.get(
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
     )
     try:
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 2).until(
             EC.element_to_be_clickable((By.CLASS_NAME, "mfp-close"))
         ).click()
     except TimeoutException:
         print("El elemento 'mfp-close' no está presente o no es clickeable.")
 
         for item in dataKeys:
-            print(item["menuTwo"])
             completed = False
-            select_element = WebDriverWait(driver, 10).until(
+            print("item['menuTwo']", item["menuTwo"])
+            select_element = WebDriverWait(driver, 5).until(
                 EC.presence_of_element_located((By.XPATH, item["clickOne"]))
             )
             select_obj = Select(select_element)
@@ -328,7 +325,7 @@ def scrapping(dataKeys, arr):
                         )
                     )
                 ).click()
-                time.sleep(9)
+                time.sleep(8)
                 if item["menuTwo"] == "Citizenship certificate (proof of citizenship)":
                     processing_time_element = WebDriverWait(driver, 2).until(
                         EC.visibility_of_element_located(
@@ -340,7 +337,7 @@ def scrapping(dataKeys, arr):
                     )
                 else:
                     if item["responseSize"] == "1":
-                        processing_time_element = WebDriverWait(driver, 10).until(
+                        processing_time_element = WebDriverWait(driver, 2).until(
                             EC.visibility_of_element_located(
                                 (
                                     By.XPATH,
@@ -356,7 +353,7 @@ def scrapping(dataKeys, arr):
                     else:
                         if item["menuTwo"] == "Adoption":
                             processing_time_element_part_one = WebDriverWait(
-                                driver, 10
+                                driver, 2
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -366,7 +363,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             processing_time_element_part_two = WebDriverWait(
-                                driver, 10
+                                driver, 2
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -383,7 +380,7 @@ def scrapping(dataKeys, arr):
                             arr.append(obj)
                         else:
                             processing_time_element_online = WebDriverWait(
-                                driver, 10
+                                driver, 2
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -393,7 +390,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             processing_time_element_paper = WebDriverWait(
-                                driver, 10
+                                driver, 2
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -426,7 +423,7 @@ def scrapping(dataKeys, arr):
                     )
                 ).click()
                 time.sleep(8)
-                processing_time_element = WebDriverWait(driver, 10).until(
+                processing_time_element = WebDriverWait(driver, 2).until(
                     EC.visibility_of_element_located(
                         (
                             By.XPATH,
@@ -443,9 +440,11 @@ def scrapping(dataKeys, arr):
     return arr
 
 
+start_time = time.time()
 arr = []
 scrapping(dataKeys, arr)
-with open('output.txt', 'w') as file:
-    for data in arr:
-        print("data: ", data)
-        file.write(f"data: {data}\n")
+for data in arr:
+    print("data:", data)
+end_time = time.time()
+execution_time = end_time - start_time
+print(f"El programa tomó {execution_time} segundos para ejecutarse.")
