@@ -445,4 +445,5 @@ arr = []
 scrapping(dataKeys, arr)
 with open('output.txt', 'w') as file:
     for data in arr:
+        print("data: ", data)
         file.write(f"data: {data}\n")
