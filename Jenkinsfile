@@ -35,7 +35,7 @@ pipeline {
             emailext(
                 subject: "Resultado del Script Python",
                 body: "Aquí está el resultado del script de Python.",
-                replyTo: 'josue.r@gercanada.com',
+                replyTo: 'josue.rocha0809@gmail.com',
                 attachmentsPattern: 'canadaInfo.txt'
             )
         }
