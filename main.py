@@ -294,7 +294,7 @@ def scrapping(dataKeys, arr):
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
     )
     try:
-        WebDriverWait(driver, 2).until(
+        WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.CLASS_NAME, "mfp-close"))
         ).click()
     except TimeoutException:
@@ -303,7 +303,7 @@ def scrapping(dataKeys, arr):
         for item in dataKeys:
             completed = False
             print("item['menuTwo']", item["menuTwo"])
-            select_element = WebDriverWait(driver, 5).until(
+            select_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, item["clickOne"]))
             )
             select_obj = Select(select_element)
@@ -337,7 +337,7 @@ def scrapping(dataKeys, arr):
                     )
                 else:
                     if item["responseSize"] == "1":
-                        processing_time_element = WebDriverWait(driver, 2).until(
+                        processing_time_element = WebDriverWait(driver, 10).until(
                             EC.visibility_of_element_located(
                                 (
                                     By.XPATH,
@@ -353,7 +353,7 @@ def scrapping(dataKeys, arr):
                     else:
                         if item["menuTwo"] == "Adoption":
                             processing_time_element_part_one = WebDriverWait(
-                                driver, 2
+                                driver, 10
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -363,7 +363,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             processing_time_element_part_two = WebDriverWait(
-                                driver, 2
+                                driver, 10
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -380,7 +380,7 @@ def scrapping(dataKeys, arr):
                             arr.append(obj)
                         else:
                             processing_time_element_online = WebDriverWait(
-                                driver, 2
+                                driver, 10
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -390,7 +390,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             processing_time_element_paper = WebDriverWait(
-                                driver, 2
+                                driver, 10
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -423,7 +423,7 @@ def scrapping(dataKeys, arr):
                     )
                 ).click()
                 time.sleep(8)
-                processing_time_element = WebDriverWait(driver, 2).until(
+                processing_time_element = WebDriverWait(driver, 10).until(
                     EC.visibility_of_element_located(
                         (
                             By.XPATH,
