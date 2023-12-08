@@ -280,6 +280,7 @@ dataKeys = [
 
 
 def scrapping(dataKeys, arr):
+    print("aqui enbtro")
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -303,6 +304,7 @@ def scrapping(dataKeys, arr):
         print("El elemento 'mfp-close' no está presente o no es clickeable.")
 
         for item in dataKeys:
+            print(item["menuTwo"])
             completed = False
             select_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, item["clickOne"]))
