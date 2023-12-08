@@ -19,7 +19,7 @@ pipeline {
             }
         }
         stage('Run Tests') {
-                       steps {
+            steps {
                 script {
                     // Ejecutar el script y capturar la salida
                     def output = sh(script: './venv/bin/python main.py', returnStdout: true).trim()
@@ -29,14 +29,15 @@ pipeline {
             }
         }
     }
-        post {
+    post {
         always {
             // Envía un correo electrónico con el archivo adjunto
             emailext(
                 subject: "Resultado del Script Python",
                 body: "Aquí está el resultado del script de Python.",
-                replyTo: 'josue.rocha0809@gmail.com',
-                attachmentsPattern: 'canadaInfo.txt'
+                to: 'josue.rocha0809@gmail.com',  // Reemplaza con el destinatario real
+                replyTo: 'josue.rocha0809@gmail.com', // Opcional: dirección de respuesta
+                attachmentsPattern: 'output.txt' // Asegúrate de que coincida con el archivo generado
             )
         }
     }
