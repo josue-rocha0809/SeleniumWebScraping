@@ -7,6 +7,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 import time
+import sys
 
 dataKeys = [
     {
@@ -286,9 +287,10 @@ def scrapping(dataKeys, arr):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     options.binary_location = "/usr/bin/google-chrome"
-
-    # driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
     driver = webdriver.Chrome(options=options)
+
+    # driver_path = "C:/Users/josue/Projects/python/chrome/chromedriver.exe"
+    # driver: WebDriver = webdriver.Chrome(driver_path, chrome_options=options)
 
     driver.get(
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
@@ -324,7 +326,7 @@ def scrapping(dataKeys, arr):
                         )
                     )
                 ).click()
-                time.sleep(8)
+                time.sleep(9)
                 if item["menuTwo"] == "Citizenship certificate (proof of citizenship)":
                     processing_time_element = WebDriverWait(driver, 2).until(
                         EC.visibility_of_element_located(
@@ -439,10 +441,8 @@ def scrapping(dataKeys, arr):
     return arr
 
 
-start_time = time.time()
 arr = []
 scrapping(dataKeys, arr)
-for data in arr:
-    print("data:", data)
-end_time = time.time()
-execution_time = end_time - start_time
+with open('output.txt', 'w') as file:
+    for data in arr:
+        file.write(f"data: {data}\n")
