@@ -19,12 +19,25 @@ pipeline {
             }
         }
         stage('Run Tests') {
-            steps {
+                       steps {
                 script {
-                    // Ejecutar el script usando el Python del entorno virtual
-                    sh './venv/bin/python main.py'
+                    // Ejecutar el script y capturar la salida
+                    def output = sh(script: './venv/bin/python main.py', returnStdout: true).trim()
+                    // Escribir la salida en un archivo
+                    writeFile file: 'output.txt', text: output
                 }
             }
+        }
+    }
+        post {
+        always {
+            // Envía un correo electrónico con el archivo adjunto
+            emailext(
+                subject: "Resultado del Script Python",
+                body: "Aquí está el resultado del script de Python.",
+                recipients: 'josue.r@gercanada.com',
+                attachmentsPattern: 'canadaInfo.txt'
+            )
         }
     }
 }

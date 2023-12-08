@@ -302,7 +302,6 @@ def scrapping(dataKeys, arr):
 
         for item in dataKeys:
             completed = False
-            print("item['menuTwo']", item["menuTwo"])
             select_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, item["clickOne"]))
             )
@@ -447,4 +446,3 @@ for data in arr:
     print("data:", data)
 end_time = time.time()
 execution_time = end_time - start_time
-print(f"El programa tomó {execution_time} segundos para ejecutarse.")
