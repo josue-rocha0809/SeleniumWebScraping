@@ -18,9 +18,19 @@ pipeline {
                 }
             }
         }
-        stage('Scraping') {
+        stage('Run Tests') {
             steps {
-               script {
+                script {
+                    // Ejecutar el script usando el Python del entorno virtual
+                    sh './venv/bin/python main.py'
+                }
+            }
+        }
+    }
+
+ post {
+        always {
+            script {
                 def output = '' // Variable para almacenar la salida
                 try {
                     output = sh([script: './venv/bin/python main.py', returnStdout: true]).trim()
@@ -32,7 +42,6 @@ pipeline {
                 mail to: 'josue.r@gercanada.com',
                      subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                      body: "Salida del build:\n${output}"
-            }
             }
         }
     }
