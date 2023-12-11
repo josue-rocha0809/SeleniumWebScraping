@@ -298,11 +298,9 @@ def scrapping(dataKeys, arr):
             EC.element_to_be_clickable((By.CLASS_NAME, "mfp-close"))
         ).click()
     except TimeoutException:
-        print("El elemento 'mfp-close' no está presente o no es clickeable.")
-
+        print(" ")
         for item in dataKeys:
             completed = False
-            print("item['menuTwo']", item["menuTwo"])
             select_element = WebDriverWait(driver, 5).until(
                 EC.presence_of_element_located((By.XPATH, item["clickOne"]))
             )
@@ -346,7 +344,7 @@ def scrapping(dataKeys, arr):
                             )
                         )
                         obj = {
-                            item["menuTwo"]: item["menuTwo"],
+                            item["menuone"]: item["menuTwo"],
                             "result": processing_time_element.text,
                         }
                         arr.append(obj)
@@ -373,7 +371,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             obj = {
-                                item["menuTwo"]: item["menuTwo"],
+                                item["menuone"]: item["menuTwo"],
                                 "result_partone": processing_time_element_part_one.text,
                                 "result_parttwo": processing_time_element_part_two.text,
                             }
@@ -400,7 +398,7 @@ def scrapping(dataKeys, arr):
                                 )
                             )
                             obj = {
-                                item["menuTwo"]: item["menuTwo"],
+                                item["menuone"]: item["menuTwo"],
                                 "result_online": processing_time_element_online.text,
                                 "result_paper": processing_time_element_paper.text,
                             }
@@ -440,11 +438,8 @@ def scrapping(dataKeys, arr):
     return arr
 
 
-start_time = time.time()
 arr = []
 scrapping(dataKeys, arr)
 for data in arr:
-    print("data:", data)
-end_time = time.time()
-execution_time = end_time - start_time
-print(f"El programa tomó {execution_time} segundos para ejecutarse.")
+    print(data)
+
