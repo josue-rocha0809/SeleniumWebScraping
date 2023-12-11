@@ -29,20 +29,29 @@ pipeline {
     }
 
     post {
-        success {
-            mail to: 'josue.r@gercanada.com',
-                 subject: "Éxito: Build #${env.BUILD_NUMBER}",
-                 body: "El pipeline se ha ejecutado correctamente. URL del build: ${env.BUILD_URL}"
-        }
-        failure {
-            mail to:'josue.r@gercanada.com',
-                 subject: "Fallo: Build #${env.BUILD_NUMBER}",
-                 body: "El pipeline ha fallado. Revisa los detalles en: ${env.BUILD_URL}"
-        }
-        unstable {
-            mail to: 'josue.r@gercanada.com',
-                 subject: "Inestable: Build #${env.BUILD_NUMBER}",
-                 body: "El pipeline está inestable. Revisa los detalles en: ${env.BUILD_URL}"
+        always {
+            script {
+                // Capturar los logs de la consola
+                def consoleLog = currentBuild.rawBuild.getLog(1000).join("\n")
+
+                // Determinar el estado del build y personalizar el asunto y el cuerpo del correo
+                def mailSubject, mailBody
+                if (currentBuild.result == 'SUCCESS') {
+                    mailSubject = "Éxito: Build #${env.BUILD_NUMBER}"
+                    mailBody = "El pipeline se ha ejecutado correctamente. URL del build: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
+                } else if (currentBuild.result == 'FAILURE') {
+                    mailSubject = "Fallo: Build #${env.BUILD_NUMBER}"
+                    mailBody = "El pipeline ha fallado. Revisa los detalles en: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
+                } else {
+                    mailSubject = "Inestable: Build #${env.BUILD_NUMBER}"
+                    mailBody = "El pipeline está inestable. Revisa los detalles en: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
+                }
+
+                // Enviar un correo electrónico con los logs
+                mail to: 'josue.r@gercanada.com',
+                     subject: mailSubject,
+                     body: mailBody
+            }
         }
     }
 }
