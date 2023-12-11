@@ -44,9 +44,5 @@ pipeline {
                  subject: "Inestable: Build #${env.BUILD_NUMBER}",
                  body: "El pipeline está inestable. Revisa los detalles en: ${env.BUILD_URL}"
         }
-        always {
-            // Aquí puedes añadir acciones que siempre quieres ejecutar
-            // Por ejemplo, limpiar recursos o enviar estadísticas
-        }
     }
 }
