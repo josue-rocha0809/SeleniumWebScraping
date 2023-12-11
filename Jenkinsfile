@@ -28,29 +28,20 @@ pipeline {
         }
     }
 
-    post {
+ post {
         always {
             script {
-                // Capturar los logs de la consola
-                def consoleLog = currentBuild.rawBuild.getLog(1000).join("\n")
-
-                // Determinar el estado del build y personalizar el asunto y el cuerpo del correo
-                def mailSubject, mailBody
-                if (currentBuild.result == 'SUCCESS') {
-                    mailSubject = "Éxito: Build #${env.BUILD_NUMBER}"
-                    mailBody = "El pipeline se ha ejecutado correctamente. URL del build: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
-                } else if (currentBuild.result == 'FAILURE') {
-                    mailSubject = "Fallo: Build #${env.BUILD_NUMBER}"
-                    mailBody = "El pipeline ha fallado. Revisa los detalles en: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
-                } else {
-                    mailSubject = "Inestable: Build #${env.BUILD_NUMBER}"
-                    mailBody = "El pipeline está inestable. Revisa los detalles en: ${env.BUILD_URL}\n\nLogs:\n${consoleLog}"
+                def output = '' // Variable para almacenar la salida
+                try {
+                    output = sh(script: './venv/bin/python main.py', returnStdout: true).trim()
+                } catch (Exception e) {
+                    output = e.getMessage()
                 }
 
-                // Enviar un correo electrónico con los logs
+                // Enviar un correo electrónico con la salida
                 mail to: 'josue.r@gercanada.com',
-                     subject: mailSubject,
-                     body: mailBody
+                     subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
+                     body: "Salida del build:\n${output}"
             }
         }
     }
