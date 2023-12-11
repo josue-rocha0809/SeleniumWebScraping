@@ -18,14 +18,6 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests') {
-            steps {
-                script {
-                    // Ejecutar el script usando el Python del entorno virtual
-                    //sh './venv/bin/python main.py'
-                }
-            }
-        }
     }
 
  post {
