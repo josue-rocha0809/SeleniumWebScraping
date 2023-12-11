@@ -33,7 +33,7 @@ pipeline {
             script {
                 def output = '' // Variable para almacenar la salida
                 try {
-                    output = sh(script: './venv/bin/python main.py', returnStdout: true).trim()
+                    output = sh([script: './venv/bin/python main.py', returnStdout: true]).trim()
                 } catch (Exception e) {
                     output = e.getMessage()
                 }
