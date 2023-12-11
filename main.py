@@ -323,7 +323,7 @@ def scrapping(dataKeys, arr):
                         )
                     )
                 ).click()
-                time.sleep(8)
+                time.sleep(9)
                 if item["menuTwo"] == "Citizenship certificate (proof of citizenship)":
                     processing_time_element = WebDriverWait(driver, 2).until(
                         EC.visibility_of_element_located(
@@ -420,7 +420,7 @@ def scrapping(dataKeys, arr):
                         )
                     )
                 ).click()
-                time.sleep(8)
+                time.sleep(9)
                 processing_time_element = WebDriverWait(driver, 2).until(
                     EC.visibility_of_element_located(
                         (

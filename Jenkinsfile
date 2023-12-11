@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Ejecutar el script usando el Python del entorno virtual
-                    sh './venv/bin/python main.py'
+                    //sh './venv/bin/python main.py'
                 }
             }
         }
