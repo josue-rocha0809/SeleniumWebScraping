@@ -102,6 +102,15 @@ dataKeys = [
     {
         "responseSize": "1",
         "parts": 2,
+        "menuone": "Temporary residence (visiting, studying, working)",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Visitor visa (from inside Canada)",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 2,
         "menuone": "Permanent resident cards",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Yes, I am renewing or replacing my card, or I sent a solemn declaration",
@@ -144,6 +153,16 @@ dataKeys = [
         "clickTwo": "//div[@id='wb-auto-6']//select[2]",
         "finalClick": "btn btn-primary mrgn-bttm-md",
     },
+
+    {
+        "responseSize": "1",
+        "parts": 2,
+        "menuone": "Temporary residence (visiting, studying, working)",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Study permit extension",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
     {
         "responseSize": "1",
         "parts": 2,
@@ -158,102 +177,16 @@ dataKeys = [
         "parts": 2,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Work permit from inside Canada (initial and extension)",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 2,
+        "menuone": "Temporary residence (visiting, studying, working)",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Study permit (from inside Canada)",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Economic immigration",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Provincial Nominees",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "Yes",
-        "clickThree": "//div[@id='wb-auto-6']//select[3]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Economic immigration",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Provincial Nominees",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "No",
-        "clickThree": "//div[@id='wb-auto-6']//select[3]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Family sponsorship",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Spouse or common-law partner living inside Canada",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "In Quebec",
-        "clickThree": "//div[@id='wb-auto-6']//select[2]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Family sponsorship",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Spouse or common-law partner living inside Canada",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "Outside Quebec",
-        "clickThree": "//div[@id='wb-auto-6']//select[3]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Family sponsorship",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Spouse, common-law or conjugal partner living outside Canada",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "In Quebec",
-        "clickThree": "//div[@id='wb-auto-6']//select[2]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Family sponsorship",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Parents or grandparents",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "In Quebec",
-        "clickThree": "//div[@id='wb-auto-6']//select[2]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 3,
-        "menuone": "Family sponsorship",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Parents or grandparents",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "menuThree": "Outside Quebec",
-        "clickThree": "//div[@id='wb-auto-6']//select[3]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 2,
-        "menuone": "Temporary residence (visiting, studying, working)",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Visitor visa (from inside Canada)",
-        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
-        "finalClick": "btn btn-primary mrgn-bttm-md",
-    },
-    {
-        "responseSize": "1",
-        "parts": 2,
-        "menuone": "Temporary residence (visiting, studying, working)",
-        "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Study permit extension",
         "clickTwo": "//div[@id='wb-auto-6']//select[2]",
         "finalClick": "btn btn-primary mrgn-bttm-md",
     },
@@ -266,13 +199,82 @@ dataKeys = [
         "clickTwo": "//div[@id='wb-auto-6']//select[2]",
         "finalClick": "btn btn-primary mrgn-bttm-md",
     },
+
     {
         "responseSize": "1",
-        "parts": 2,
-        "menuone": "Temporary residence (visiting, studying, working)",
+        "parts": 31,
+        "menuone": "Economic immigration",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
-        "menuTwo": "Work permit from inside Canada (initial and extension)",
+        "menuTwo": "Provincial Nominees",
         "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "Yes",
+        "clickThree": "//div[@id='wb-auto-6']//select[3]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Economic immigration",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Provincial Nominees",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "No",
+        "clickThree": "//div[@id='wb-auto-6']//select[3]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Family sponsorship",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Spouse or common-law partner living inside Canada",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "In Quebec",
+        "clickThree": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Family sponsorship",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Spouse or common-law partner living inside Canada",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "Outside Quebec",
+        "clickThree": "//div[@id='wb-auto-6']//select[3]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Family sponsorship",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Spouse, common-law or conjugal partner living outside Canada",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "In Quebec",
+        "clickThree": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Family sponsorship",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Parents or grandparents",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "In Quebec",
+        "clickThree": "//div[@id='wb-auto-6']//select[2]",
+        "finalClick": "btn btn-primary mrgn-bttm-md",
+    },
+    {
+        "responseSize": "1",
+        "parts": 31,
+        "menuone": "Family sponsorship",
+        "clickOne": "//div[@id='wb-auto-6']//select[1]",
+        "menuTwo": "Parents or grandparents",
+        "clickTwo": "//div[@id='wb-auto-6']//select[2]",
+        "menuThree": "Outside Quebec",
+        "clickThree": "//div[@id='wb-auto-6']//select[3]",
         "finalClick": "btn btn-primary mrgn-bttm-md",
     },
 
@@ -422,7 +424,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -434,7 +436,7 @@ dataKeys = [
 
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -445,7 +447,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -456,7 +458,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -467,7 +469,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -478,7 +480,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -489,7 +491,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -500,7 +502,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -511,7 +513,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -522,7 +524,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -533,7 +535,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -544,7 +546,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -555,7 +557,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 31,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Super visa (parents or grandparents)",
@@ -566,7 +568,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -578,7 +580,7 @@ dataKeys = [
 
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -589,7 +591,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -600,7 +602,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -611,7 +613,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -622,7 +624,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -633,7 +635,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -644,7 +646,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -655,7 +657,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -666,7 +668,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -677,7 +679,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -688,7 +690,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -699,7 +701,7 @@ dataKeys = [
     },
     {
         "responseSize": "1",
-        "parts": 3,
+        "parts": 32,
         "menuone": "Temporary residence (visiting, studying, working)",
         "clickOne": "//div[@id='wb-auto-6']//select[1]",
         "menuTwo": "Work permit (from outside Canada)",
@@ -719,7 +721,7 @@ def scrapping(dataKeys, arr):
     options.add_argument("--disable-dev-shm-usage")
     options.binary_location = "/usr/bin/google-chrome"
 
-    # driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
+    driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
     driver = webdriver.Chrome(options=options)
 
     # windows
@@ -740,14 +742,13 @@ def scrapping(dataKeys, arr):
     else:
         # Si el elemento no está presente, imprime un mensaje (opcional).
         print("--")
-    # try:
-    #     WebDriverWait(driver, 20).until(
-    #         EC.element_to_be_clickable((By.CLASS_NAME, "mfp-close"))
-    #     ).click()
-    # except TimeoutException:
+        # try:
+        #     WebDriverWait(driver, 20).until(
+        #         EC.element_to_be_clickable((By.CLASS_NAME, "mfp-close"))
+        #     ).click()
+        # except TimeoutException:
 
         for item in dataKeys:
-
 
             completed = False
             select_element = WebDriverWait(driver, 500).until(
@@ -765,7 +766,7 @@ def scrapping(dataKeys, arr):
             completed = True
             if item["parts"] == 2:
 
-                WebDriverWait(driver, 100).until(
+                WebDriverWait(driver, 300).until(
                     EC.element_to_be_clickable(
                         (
                             By.CLASS_NAME,
@@ -775,7 +776,7 @@ def scrapping(dataKeys, arr):
                 ).click()
                 time.sleep(9)
                 if item["menuTwo"] == "Citizenship certificate (proof of citizenship)":
-                    processing_time_element = WebDriverWait(driver, 100).until(
+                    processing_time_element = WebDriverWait(driver, 300).until(
                         EC.visibility_of_element_located(
                             (
                                 By.XPATH,
@@ -787,10 +788,11 @@ def scrapping(dataKeys, arr):
 
                     if item["responseSize"] == "1":
 
-                        if item['menuTwo'] == "Visitor visa (from inside Canada)" or item['menuTwo']=="Study permit extension" or item["menuTwo"]=="Work permit from inside Canada (initial and extension)":
-                            print("aquiiii debo ")
+                        if (item['menuTwo'] == "Visitor visa (from inside Canada)" or item[
+                            'menuTwo'] == "Study permit extension"
+                                or item["menuTwo"] == "Work permit from inside Canada (initial and extension)"):
                             processing_time_element_online = WebDriverWait(
-                                driver, 300
+                                driver, 3000
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -802,13 +804,12 @@ def scrapping(dataKeys, arr):
                             )
 
                             processing_time_element_paper = WebDriverWait(
-                                driver, 300
+                                driver, 3000
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
                                         By.XPATH,
                                         "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/div[1]/p/span[2]"
-
                                     )
                                 )
                             )
@@ -821,7 +822,7 @@ def scrapping(dataKeys, arr):
                             arr.append(obj)
                         else:
 
-                            processing_time_element = WebDriverWait(driver, 100).until(
+                            processing_time_element = WebDriverWait(driver, 300).until(
                                 EC.visibility_of_element_located(
                                     (
                                         By.XPATH,
@@ -865,7 +866,6 @@ def scrapping(dataKeys, arr):
                             }
                             arr.append(obj)
                         else:
-                            print("aquiiiino333")
 
                             processing_time_element_online = WebDriverWait(
                                 driver, 200
@@ -879,7 +879,7 @@ def scrapping(dataKeys, arr):
                             )
 
                             processing_time_element_paper = WebDriverWait(
-                                driver, 200
+                                driver, 300
                             ).until(
                                 EC.visibility_of_element_located(
                                     (
@@ -895,6 +895,39 @@ def scrapping(dataKeys, arr):
                             }
 
                             arr.append(obj)
+            elif item["parts"] == 31:
+                select_element3 = WebDriverWait(driver, 300).until(
+                    EC.element_to_be_clickable(
+                        (By.XPATH, "//div[@id='wb-auto-6']//select[3]")
+                    )
+                )
+                select_obj3 = Select(select_element3)
+                select_obj3.select_by_visible_text(item["menuThree"])
+
+                WebDriverWait(driver, 300).until(
+                    EC.element_to_be_clickable(
+                        (
+                            By.CLASS_NAME,
+                            "btn btn-primary mrgn-bttm-md".replace(" ", "."),
+                        )
+                    )
+                ).click()
+                time.sleep(9)
+                processing_time_element = WebDriverWait(driver, 300).until(
+                    EC.visibility_of_element_located(
+                        (
+                            By.XPATH,
+                            # "/html/body/main/div[3]/div[4]/div[3]/div/div[3]/p/span[2]",
+                            "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span[2]"
+                        )
+                    )
+                )
+
+                obj = {
+                    item["menuThree"]: item["menuThree"],
+                    "result": processing_time_element.text,
+                }
+                arr.append(obj)
             elif item["parts"] == 3:
                 select_element3 = WebDriverWait(driver, 300).until(
                     EC.element_to_be_clickable(
@@ -904,7 +937,7 @@ def scrapping(dataKeys, arr):
                 select_obj3 = Select(select_element3)
                 select_obj3.select_by_visible_text(item["menuThree"])
 
-                WebDriverWait(driver, 100).until(
+                WebDriverWait(driver, 300).until(
                     EC.element_to_be_clickable(
                         (
                             By.CLASS_NAME,
@@ -913,19 +946,58 @@ def scrapping(dataKeys, arr):
                     )
                 ).click()
                 time.sleep(9)
-                processing_time_element = WebDriverWait(driver, 100).until(
+                processing_time_element = WebDriverWait(driver, 300).until(
                     EC.visibility_of_element_located(
                         (
                             By.XPATH,
-                            "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span[2]",
+                            "/html/body/main/div[3]/div[4]/div[3]/div/div[3]/p/span[2]",
+
+
+
                         )
                     )
                 )
+
                 obj = {
                     item["menuThree"]: item["menuThree"],
                     "result": processing_time_element.text,
                 }
                 arr.append(obj)
+            elif item["parts"] == 32:
+                select_element3 = WebDriverWait(driver, 300).until(
+                    EC.element_to_be_clickable(
+                        (By.XPATH, "//div[@id='wb-auto-6']//select[3]")
+                    )
+                )
+                select_obj3 = Select(select_element3)
+                select_obj3.select_by_visible_text(item["menuThree"])
+
+                WebDriverWait(driver, 300).until(
+                    EC.element_to_be_clickable(
+                        (
+                            By.CLASS_NAME,
+                            "btn btn-primary mrgn-bttm-md".replace(" ", "."),
+                        )
+                    )
+                ).click()
+                time.sleep(9)
+                processing_time_element = WebDriverWait(driver, 300).until(
+                    EC.visibility_of_element_located(
+                        (
+                            By.XPATH,
+                            "/html/body/main/div[3]/div[4]/div[3]/div/div[2]/p/span",
+
+
+                        )
+                    )
+                )
+
+                obj = {
+                    item["menuThree"]: item["menuThree"],
+                    "result": processing_time_element.text,
+                }
+                arr.append(obj)
+
         driver.quit()
     return arr
 
@@ -934,4 +1006,3 @@ arr = []
 scrapping(dataKeys, arr)
 for data in arr:
     print(data)
-
