@@ -721,7 +721,7 @@ def scrapping(dataKeys, arr):
     options.add_argument("--disable-dev-shm-usage")
     options.binary_location = "/usr/bin/google-chrome"
 
-    driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
+    # driver_path = "~/Documents/Development/dev-josue/SeleniumWebScraping/chromedriver-linux64/chromedriver"
     driver = webdriver.Chrome(options=options)
 
     # windows
