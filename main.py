@@ -715,18 +715,18 @@ dataKeys = [
 
 def scrapping(dataKeys, arr):
     options = webdriver.ChromeOptions()
-    # options.add_argument("--headless")
-    # options.add_argument("--disable-gpu")
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-    # options.binary_location = "/usr/bin/google-chrome"
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.binary_location = "/usr/bin/google-chrome"
 
     #linux
-    # driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options)
 
     # windows
-    driver_path = "C:/Users/josue/Projects/python/chrome/chromedriver.exe"
-    driver: WebDriver = webdriver.Chrome(driver_path, chrome_options=options)
+    # driver_path = "C:/Users/josue/Projects/python/chrome/chromedriver.exe"
+    # driver: WebDriver = webdriver.Chrome(driver_path, chrome_options=options)
     driver.get(
         'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html')
 
