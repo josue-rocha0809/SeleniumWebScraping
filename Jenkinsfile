@@ -29,9 +29,8 @@ pipeline {
                 } catch (Exception e) {
                     output = e.getMessage()
                 }
-
                 // Enviar un correo electrónico con la salida
-                mail to: 'pablo@gercanada.com',
+                mail to: 'josue.rocha0809@gmail.com',
                      subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                      body: "Salida del build:\n${output}"
             }
