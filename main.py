@@ -924,8 +924,8 @@ def scrapping(dataKeys, arr):
                 )
 
                 obj = {
-                    item["menuThree"]: item["menuThree"],
-                    "result": processing_time_element.text,
+                    item["menuone"]: item["menuTwo"],
+                    item["menuThree"]: "result:" + processing_time_element.text
                 }
                 arr.append(obj)
             elif item["parts"] == 3:
@@ -959,8 +959,8 @@ def scrapping(dataKeys, arr):
                 )
 
                 obj = {
-                    item["menuThree"]: item["menuThree"],
-                    "result": processing_time_element.text,
+                    item["menuone"]: item["menuTwo"],
+                    item["menuThree"]: "result:" + processing_time_element.text
                 }
                 arr.append(obj)
             elif item["parts"] == 32:
@@ -991,10 +991,9 @@ def scrapping(dataKeys, arr):
                         )
                     )
                 )
-
                 obj = {
-                    item["menuThree"]: item["menuThree"],
-                    "result": processing_time_element.text,
+                    item["menuone"]: item["menuTwo"],
+                    item["menuThree"]: "result:"+processing_time_element.text
                 }
                 arr.append(obj)
 
