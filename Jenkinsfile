@@ -31,7 +31,7 @@ pipeline {
                 }
 
                 // Enviar un correo electrónico con la salida
-                mail to: 'josue.rocha0809@gmail.com',
+                mail to: 'pablo@gercanada.com',
                      subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                      body: "Salida del build:\n${output}"
             }
